@@ -3,15 +3,17 @@ import styled from "styled-components";
 import {Container} from "../../components/Container";
 import {FlexWrap} from "../../components/FlexWrap";
 import {theme} from "../styles/Theme";
+import {Link} from "../../components/Link";
 
 export const Header: React.FC = () => {
     return <StyledHeader>
         <Container>
             <FlexWrap justify="flex-end">
                 <StyledMenu>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contacts">Contacts</a></li>
+                    <li><Link href="#">CV</Link></li>
+                    <li><Link href="#">Projects</Link></li>
+                    <li><Link href="#">Skills</Link></li>
+                    <li><Link href="#">Contacts</Link></li>
                 </StyledMenu>
             </FlexWrap>
         </Container>
@@ -19,15 +21,16 @@ export const Header: React.FC = () => {
 };
 
 const StyledHeader = styled.div`
-    background-color: coral;
     position: fixed;
     right: 0;
     left: 0;
-    padding: ${theme.dimensions.lineSpace} 0;
+    padding: ${theme.dimensions.itemSpace} 0;
+    backdrop-filter: blur(2px);
 `
 
 const StyledMenu = styled.ul`
     display: flex;
-    gap: ${theme.dimensions.lineSpace};
-    background-color: aqua;
+    gap: 100px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 `

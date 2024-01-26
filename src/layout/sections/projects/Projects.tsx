@@ -4,27 +4,23 @@ import {FlexWrap} from "../../../components/FlexWrap";
 import styled from "styled-components";
 import {Project} from "./Project";
 import {theme} from "../../styles/Theme";
+import {SectionTitle} from "../../../components/SectionTitle";
 
 export const Projects: React.FC = () => {
-    return <Container>
-        <FlexWrap direction="column">
-            <Title>Projects</Title>
-            <StyledProjects>
+    return <StyledProjects>
+        <Container>
+            <SectionTitle>Projects</SectionTitle>
+            <FlexWrap justify="space-around" align="flex-start" wrap="wrap">
                 <Project/>
                 <Project/>
                 <Project/>
-            </StyledProjects>
-        </FlexWrap>
-    </Container>
+            </FlexWrap>
+        </Container>
+    </StyledProjects>
 };
 
-const StyledProjects = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    gap: ${theme.dimensions.itemSpace};
-    background-color: deepskyblue;
-`
-
-const Title = styled.h2`
-    margin-bottom: ${theme.dimensions.itemSpace};
+const StyledProjects = styled.section`
+    ${FlexWrap} {
+        gap: ${theme.dimensions.itemSpace};
+    }
 `

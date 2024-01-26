@@ -2,49 +2,38 @@ import React from 'react';
 import {theme} from "../../styles/Theme";
 import styled from "styled-components";
 import {Container} from "../../../components/Container";
+import {SectionTitle} from "../../../components/SectionTitle";
+import {FlexWrap} from "../../../components/FlexWrap";
+import {Icon} from "../../../components/Icon";
 
 export const Skills: React.FC = () => {
-    return <SkillsWrap>
+    return <StyledSkills>
         <Container>
-            <Title>Skills</Title>
+            <SectionTitle>Skills</SectionTitle>
             <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio odit qui sint. A adipisci asperiores
                 aut
                 deserunt ducimus enim inventore itaque modi repudiandae tempore? Aliquam eveniet ex labore pariatur
                 reiciendis.</Text>
+            <FlexWrap justify="center" wrap="wrap">
+                <Icon iconId="react"/>
+                <Icon iconId="typeScript"/>
+                <Icon iconId="javaScript"/>
+                <Icon iconId="docker"/>
+                <Icon iconId="styledComponents"/>
+                <Icon iconId="reactNative"/>
+                <Icon iconId="redux"/>
+            </FlexWrap>
         </Container>
-        <StyledSkills>
-            <Skill/>
-            <Skill/>
-            <Skill/>
-            <Skill/>
-            <Skill/>
-        </StyledSkills>
-    </SkillsWrap>
+    </StyledSkills>
 };
 
-const Title = styled.h2`
-
+const StyledSkills = styled.section`
+    ${FlexWrap} {
+        gap: 150px;
+    }
 `
 
-const SkillsWrap = styled.div`
-    padding: 100px 0;
-    background-color: floralwhite;
-`
-
-const StyledSkills = styled.div`
-    display: flex;
-    gap: ${theme.dimensions.itemSpace};
-    background-color: darkblue;
-    padding: ${theme.dimensions.itemSpace} 0;
-`
-
-const Text = styled.p`
+const Text = styled.div`
     max-width: 800px;
-    margin: ${theme.dimensions.lineSpace} 0;
-`
-
-const Skill = styled.div`
-    width: 100px;
-    height: 100px;
-    background-color: bisque;
+    margin: 0 auto ${theme.dimensions.itemSpace};
 `
