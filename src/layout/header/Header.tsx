@@ -8,24 +8,27 @@ import {Link} from "../../components/Link";
 export const Header: React.FC = () => {
     return <StyledHeader>
         <Container>
-            <FlexWrap justify="flex-end">
-                <StyledMenu>
-                    <li><Link href="#">CV</Link></li>
-                    <li><Link href="#">Projects</Link></li>
-                    <li><Link href="#">Skills</Link></li>
-                    <li><Link href="#">Contacts</Link></li>
-                </StyledMenu>
+            <FlexWrap justify="center">
+                <nav>
+                    <StyledMenu>
+                        <li><Link href="https://hh.ru/resume/20f54a99ff0c4d7b5d0039ed1f435368756765">Resume ⤓</Link>
+                        </li>
+                        <li><Link href={"#projects"}>Projects</Link></li>
+                        <li><Link href={"#skills"}>Skills</Link></li>
+                        <li><Link href={"#contacts"}>Contacts</Link></li>
+                    </StyledMenu>
+                </nav>
             </FlexWrap>
         </Container>
     </StyledHeader>
 };
 
 const StyledHeader = styled.div`
-    position: fixed;
-    right: 0;
-    left: 0;
+    position: sticky;
+    top: 0;
     padding: ${theme.dimensions.itemSpace} 0;
-    backdrop-filter: blur(2px);
+    background-color: rgba(255, 255, 255, .9);
+    backdrop-filter: blur(5px);
 `
 
 const StyledMenu = styled.ul`

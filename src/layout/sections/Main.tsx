@@ -4,18 +4,20 @@ import {Container} from "../../components/Container";
 import {FlexWrap} from "../../components/FlexWrap";
 import photo from "../../assets/images/photo.jpg"
 import {theme} from "../styles/Theme";
+import {Button} from "../../components/Button";
 
 export const Main: React.FC = () => {
     return <StyledMain>
         <Container>
             <FlexWrap justify="space-around" align="center" wrap="wrap">
-                <About>
+                <Info>
                     <Title>Sergei Fediaev</Title>
                     <Subtitle>Frontend developer</Subtitle>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus earum facilis optio sint
                         velit. Amet architecto aspernatur, assumenda dolorum eos, harum nisi officiis, perspiciatis
                         quaerat quam reiciendis repellat reprehenderit rerum?</p>
-                </About>
+                    <Button as="a" href="https://hh.ru/resume/20f54a99ff0c4d7b5d0039ed1f435368756765">Resume ⤓</Button>
+                </Info>
                 <Photo src={photo}/>
             </FlexWrap>
         </Container>
@@ -31,9 +33,12 @@ const StyledMain = styled.section`
     }
 `
 
-const About = styled.div`
+const Info = styled.div`
     text-align: left;
     max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: ${theme.dimensions.lineSpace};
 `
 
 const Photo = styled.img`
@@ -51,5 +56,4 @@ const Title = styled.h1`
 
 const Subtitle = styled.h2`
     font-size: ${theme.dimensions.subtitleSize};
-    margin: ${theme.dimensions.lineSpace} 0;
 `

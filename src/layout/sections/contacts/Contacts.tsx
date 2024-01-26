@@ -4,72 +4,75 @@ import {Container} from "../../../components/Container";
 import {theme} from "../../styles/Theme";
 import {FlexWrap} from "../../../components/FlexWrap";
 import {SectionTitle} from "../../../components/SectionTitle";
+import {Link} from "../../../components/Link";
+import {Button} from "../../../components/Button";
 
 export const Contacts: React.FC = () => {
-    return <StyledContacts>
+    return <StyledContacts id="contacts">
         <Container>
             <SectionTitle>Contacts</SectionTitle>
-            <FlexWrap justify="center">
-                <Feedback>
+            <FlexWrap justify="center" align="center" direction="column">
+                <Form>
                     <input type="text" placeholder="Name"/>
                     <input type="text" placeholder="Email"/>
                     <input type="text" placeholder="Subject"/>
                     <textarea placeholder="Message"></textarea>
-                    <input type="submit"/>
-                </Feedback>
-                <Links>
-                    <li>GitHub</li>
-                    <li>VK</li>
-                    <li>Telegram</li>
-                    <li>Email</li>
-                </Links>
+                    <Button as="input" type="submit"/>
+                </Form>
+                <nav>
+                    <Links>
+                        <li>
+                            <p>LinkedIn:</p>
+                            <Link href="https://www.linkedin.com/in/sergfediaev">linkedin.com/in/SergFediaev</Link>
+                        </li>
+                        <li>
+                            <p>GitHub:</p>
+                            <Link href="https://github.com/SergFediaev">github.com/SergFediaev</Link>
+                        </li>
+                        <li>
+                            <p>VK:</p>
+                            <Link href="https://vk.com/sergfediaev">vk.com/SergFediaev</Link>
+                        </li>
+                        <li>
+                            <p>Telegram:</p>
+                            <Link href="https://t.me/SergFediaev">@SergFediaev</Link>
+                        </li>
+                        <li>
+                            <p>Email:</p>
+                            <Link href="mailto:sergfediaev@gmail.com">SergFediaev@gmail.com</Link>
+                        </li>
+                    </Links>
+                </nav>
             </FlexWrap>
         </Container>
     </StyledContacts>
 };
 
 const StyledContacts = styled.section`
-    & input {
-        font-size: 1rem;
+    ${FlexWrap} {
+        gap: 200px;
+    }
+
+    & input,
+    & textarea {
+        font-size: ${theme.dimensions.textSize};
         padding: ${theme.dimensions.lineSpace};
-        border-radius: 10px;
+        border-radius: ${theme.dimensions.buttonRadius};
         border: 2px solid;
         transition: ${theme.animations.defaultDuration};
 
         &:hover {
-            border: 2px solid ${theme.colors.primaryAccent};
-        }
-    }
-
-    & input[type=submit] {
-        background-color: ${theme.colors.primaryAccent};
-        color: #FFF;
-        font-size: 1rem;
-        cursor: pointer;
-
-        &:hover {
-            background-color: transparent;
-            color: ${theme.colors.primaryAccent};
-            border: 2px solid ${theme.colors.primaryAccent};
+            border-color: ${theme.colors.primaryAccent};
         }
     }
 
     & textarea {
-        font-size: 1rem;
-        padding: ${theme.dimensions.lineSpace};
-        border-radius: 10px;
-        border: 2px solid;
         resize: none;
         height: 200px;
-        transition: ${theme.animations.defaultDuration};
-
-        &:hover {
-            border: 2px solid ${theme.colors.primaryAccent};
-        }
     }
 `
 
-const Feedback = styled.div`
+const Form = styled.form`
     display: flex;
     flex-direction: column;
     gap: ${theme.dimensions.lineSpace};
@@ -78,7 +81,9 @@ const Feedback = styled.div`
 `
 
 const Links = styled.ul`
+    max-width: 1000px;
     display: flex;
-    flex-direction: column;
-    gap: ${theme.dimensions.lineSpace};
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 100px;
 `

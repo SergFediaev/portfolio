@@ -8,7 +8,7 @@ export const Project: React.FC = () => {
     return <StyledProject>
         <Preview src={preview}/>
         <Info>
-            <Title>Project title</Title>
+            <Title>Project</Title>
             <Description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur at atque quod repellat
                 voluptate. Adipisci asperiores aspernatur dolorem expedita illo libero nostrum provident sapiente
                 veritatis, vitae. Alias natus porro vitae?</Description>

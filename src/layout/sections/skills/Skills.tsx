@@ -7,7 +7,7 @@ import {FlexWrap} from "../../../components/FlexWrap";
 import {Icon} from "../../../components/Icon";
 
 export const Skills: React.FC = () => {
-    return <StyledSkills>
+    return <StyledSkills id="skills">
         <Container>
             <SectionTitle>Skills</SectionTitle>
             <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio odit qui sint. A adipisci asperiores
@@ -22,6 +22,14 @@ export const Skills: React.FC = () => {
                 <Icon iconId="styledComponents"/>
                 <Icon iconId="reactNative"/>
                 <Icon iconId="redux"/>
+                <Icon iconId="html"/>
+                <Icon iconId="css"/>
+                <Icon iconId="bootstrap"/>
+                <Icon iconId="sass"/>
+                <Icon iconId="git"/>
+                <Icon iconId="vsCode"/>
+                <Icon iconId="gitHub"/>
+                <Icon iconId="tailwind"/>
             </FlexWrap>
         </Container>
     </StyledSkills>
@@ -29,7 +37,7 @@ export const Skills: React.FC = () => {
 
 const StyledSkills = styled.section`
     ${FlexWrap} {
-        gap: 150px;
+        gap: 100px;
     }
 `
 

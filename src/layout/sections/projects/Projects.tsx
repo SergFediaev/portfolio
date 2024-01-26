@@ -7,7 +7,7 @@ import {theme} from "../../styles/Theme";
 import {SectionTitle} from "../../../components/SectionTitle";
 
 export const Projects: React.FC = () => {
-    return <StyledProjects>
+    return <StyledProjects id="projects">
         <Container>
             <SectionTitle>Projects</SectionTitle>
             <FlexWrap justify="space-around" align="flex-start" wrap="wrap">

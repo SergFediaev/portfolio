@@ -27,10 +27,18 @@ export const GlobalStyled = createGlobalStyle`
     html {
         font-size: 20px;
         font-family: Arial, sans-serif;
+        scroll-behavior: smooth;
     }
 
     body {
+        min-width: 360px;
         color: ${theme.colors.text};
         background-color: ${theme.colors.primarySurface};
+        line-height: 1.4;
+    }
+
+    button {
+        background-color: unset;
+        border: none;
     }
 `
