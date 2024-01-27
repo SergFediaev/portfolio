@@ -21,7 +21,7 @@ const Preview = styled.img`
     display: block;
 `
 
-const Title = styled.h2`
+const Title = styled.h3`
     font-size: ${theme.dimensions.subtitleSize};
 `
 
