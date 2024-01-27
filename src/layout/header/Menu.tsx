@@ -6,7 +6,7 @@ const links = [
     {
         id: 1,
         title: "Resume ⤓",
-        link: "https://hh.ru/resume/20f54a99ff0c4d7b5d0039ed1f435368756765",
+        link: "https://hh.ru/resume/12b9af98ff0ccda8230039ed1f69694a514d50",
     },
     {
         id: 2,
