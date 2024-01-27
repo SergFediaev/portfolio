@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {theme} from "../layout/styles/Theme";
+import {theme} from "../styles/Theme";
 
 export const Link = styled.a`
     border-bottom: solid 4px ${theme.colors.primaryAccent};

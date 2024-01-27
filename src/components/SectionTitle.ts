@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {theme} from "../layout/styles/Theme";
+import {theme} from "../styles/Theme";
 
 export const SectionTitle = styled.h2`
     text-align: center;

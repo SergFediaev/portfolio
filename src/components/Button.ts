@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {theme} from "../layout/styles/Theme";
+import {theme} from "../styles/Theme";
 
 export const Button = styled.button`
     background-color: ${theme.colors.primaryAccent};
@@ -13,7 +13,7 @@ export const Button = styled.button`
     cursor: pointer;
 
     &:hover {
-        background-color: transparent;
+        background-color: ${theme.colors.itemSurface};
         color: ${theme.colors.primaryAccent};
         border-color: ${theme.colors.primaryAccent};
     }

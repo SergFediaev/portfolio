@@ -1,43 +1,21 @@
 import React from 'react';
-import styled from "styled-components";
-import preview from "../../../assets/images/project.jpg"
-import {theme} from "../../styles/Theme";
 import {Link} from "../../../components/Link";
+import {S} from './Projects_Styles';
 
-export const Project: React.FC = () => {
-    return <StyledProject>
-        <Preview src={preview}/>
-        <Info>
-            <Title>Project</Title>
-            <Description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur at atque quod repellat
-                voluptate. Adipisci asperiores aspernatur dolorem expedita illo libero nostrum provident sapiente
-                veritatis, vitae. Alias natus porro vitae?</Description>
-            <Link href="#">More</Link>
-        </Info>
-    </StyledProject>
+type ProjectPropsType = {
+    preview: string
+    title: string
+    description: string
+    link: string
+}
+
+export const Project: React.FC<ProjectPropsType> = (props: ProjectPropsType) => {
+    return <S.Project>
+        <S.Preview src={props.preview}/>
+        <S.Info>
+            <S.Title>{props.title}</S.Title>
+            <S.Description>{props.description}</S.Description>
+            <Link href={props.link}>Learn more ⟶</Link>
+        </S.Info>
+    </S.Project>
 };
-
-const StyledProject = styled.div`
-    max-width: 500px;
-    border-radius: ${theme.dimensions.cardRadius};
-    overflow-y: hidden;
-    background-color: ${theme.colors.itemSurface};
-    box-shadow: ${theme.shadows.card};
-`
-
-const Preview = styled.img`
-    width: 100%;
-    display: block;
-`
-
-const Title = styled.h2`
-    font-size: ${theme.dimensions.subtitleSize};
-`
-
-const Description = styled.p`
-    margin: ${theme.dimensions.lineSpace} 0;
-`
-
-const Info = styled.div`
-    padding: ${theme.dimensions.itemSpace};
-`
