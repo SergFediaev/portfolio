@@ -31,7 +31,7 @@ export const Contacts: React.FC = () => {
                 <S.Form ref={form} onSubmit={sendEmail}>
                     <S.Field type="text" placeholder="Name" required name="user_name"/>
                     <S.Field type="text" placeholder="Email" required name="email"/>
-                    <S.Field type="text" placeholder="Subject" required name="subject"/>
+                    <S.Field type="text" placeholder="Subject" name="subject"/>
                     <S.Field as={S.Textarea} placeholder="Message" required name="message"/>
                     <Button as="input" type="submit" value="Submit"/>
                 </S.Form>

@@ -25,4 +25,7 @@ export const theme = {
     animations: {
         defaultDuration: ".2s",
     },
+    media: {
+        mobile: "screen and (max-width: 576px)",
+    }
 }

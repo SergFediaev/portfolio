@@ -7,6 +7,10 @@ const Header = styled.div`
     padding: ${theme.dimensions.itemSpace} 0;
     background-color: rgba(255, 255, 255, .9);
     backdrop-filter: blur(5px);
+
+    @media ${theme.media.mobile} {
+        display: none;
+    }
 `
 
 const Menu = styled.ul`
